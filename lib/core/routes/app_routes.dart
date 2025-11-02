@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:task_manager/presentation/screens/login/login.dart';
+import 'package:task_manager/presentation/screens/auth/login/login.dart';
+
 import 'package:task_manager/presentation/screens/onboarding/onboarding.dart';
 import 'package:task_manager/presentation/screens/splash_screen/splash_screen.dart';
 

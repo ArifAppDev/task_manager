@@ -104,7 +104,7 @@ class OnboardingScreen extends StatelessWidget {
                             } else {
                               onboardingController.pageController.nextPage(
                                 duration: Duration(seconds: 1),
-                                curve: Curves.fastOutSlowIn,
+                                curve: Curves.easeInOut,
                               );
                             }
                           },
