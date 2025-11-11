@@ -49,4 +49,8 @@ class StaticStrings {
   static RegExp passwordRegexp = RegExp(
     r'^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$&*~]).{6,}$',
   );
+
+  static const String greetsmssage = "Hello";
+  static const String welcometotask = "Welcome to Task Manager ";
+  static const String mytask = "My Tasks";
 }

@@ -7,11 +7,8 @@ import 'package:task_manager/core/general_controller/general_controller.dart';
 import 'package:task_manager/utils/app_color/app_colors.dart';
 import 'package:task_manager/utils/static_string/static_strings.dart';
 
-class CustomTextfromFieldPassword extends StatelessWidget {
-  const CustomTextfromFieldPassword({
-    super.key,
-    required this.passwordcontroller,
-  });
+class CustomPasswordTextField extends StatelessWidget {
+  const CustomPasswordTextField({super.key, required this.passwordcontroller});
 
   final TextEditingController passwordcontroller;
 

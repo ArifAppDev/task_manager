@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -9,8 +7,9 @@ import 'package:task_manager/core/routes/app_routes.dart';
 
 import 'package:task_manager/presentation/widgets/custom_button.dart';
 import 'package:task_manager/presentation/widgets/custom_divider.dart';
-import 'package:task_manager/presentation/widgets/custom_textfrom_field.dart';
-import 'package:task_manager/presentation/widgets/custom_textfrom_field_password.dart';
+import 'package:task_manager/presentation/widgets/custom_email_textfield.dart';
+
+import 'package:task_manager/presentation/widgets/custom_password_textfield.dart';
 import 'package:task_manager/utils/app_color/app_colors.dart';
 import 'package:task_manager/utils/static_string/static_strings.dart';
 
@@ -67,16 +66,14 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: 6),
 
                   // custom Text from field
-                  CustomTextfromField(
+                  CustomEmailTextField(
                     hinttext: 'michelle.rivera@example.com',
                     emailcontroller: emailController,
                   ),
                   SizedBox(height: 22),
 
                   // custom text from fiels password
-                  CustomTextfromFieldPassword(
-                    passwordcontroller: passController,
-                  ),
+                  CustomPasswordTextField(passwordcontroller: passController),
 
                   SizedBox(height: 15),
 
@@ -142,15 +139,16 @@ class LoginScreen extends StatelessWidget {
                   CustomButton(
                     title: StaticStrings.login,
                     onTap: () {
-                      if (formkey.currentState!.validate()) {
-                        // Both fields valid
-                        log("Form valid");
-                        log("Email: ${emailController.text}");
-                        log("Password: ${passController.text}");
-                      } else {
-                        // Either email or password invalid
-                        log("Form invalid");
-                      }
+                      // if (formkey.currentState!.validate()) {
+                      //   // Both fields valid
+                      //   log("Form valid");
+                      //   log("Email: ${emailController.text}");
+                      //   log("Password: ${passController.text}");
+                      // } else {
+                      //   // Either email or password invalid
+                      //   log("Form invalid");
+                      // }
+                      Get.toNamed(AppRoutes.homescreen);
                     },
                   ),
                 ],

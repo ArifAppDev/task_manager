@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+
 import 'package:task_manager/core/custom_assets/custom_icons/custom_icons.dart';
+import 'package:task_manager/core/routes/app_routes.dart';
 
 import 'package:task_manager/presentation/widgets/custom_button_onboarding.dart';
-import 'package:task_manager/presentation/widgets/custom_textfrom_field.dart';
+import 'package:task_manager/presentation/widgets/custom_email_textfield.dart';
+import 'package:task_manager/presentation/widgets/custom_password_textfield.dart';
 import 'package:task_manager/utils/app_color/app_colors.dart';
 import 'package:task_manager/utils/static_string/static_strings.dart';
 
@@ -12,6 +16,7 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController passController = TextEditingController();
     final TextEditingController emailController = TextEditingController();
     return Scaffold(
       body: Padding(
@@ -55,7 +60,7 @@ class SignUpScreen extends StatelessWidget {
                 SizedBox(height: 6),
 
                 // First name
-                CustomTextfromField(
+                CustomEmailTextField(
                   hinttext: 'e.g. Kristin ',
                   emailcontroller: emailController,
                 ),
@@ -72,7 +77,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 6),
 
-                CustomTextfromField(
+                CustomEmailTextField(
                   hinttext: 'e.g. Cooper',
                   emailcontroller: emailController,
                 ),
@@ -89,7 +94,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 6),
 
-                CustomTextfromField(
+                CustomEmailTextField(
                   hinttext: 'e.g. kristin.cooper@example.com',
                   emailcontroller: emailController,
                 ),
@@ -104,8 +109,7 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 6),
-
-                CustomTextfromField(
+                CustomEmailTextField(
                   hinttext: 'e.g. 1234 Elm Street, Springfield, IL',
                   emailcontroller: emailController,
                 ),
@@ -122,10 +126,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 6),
 
-                CustomTextfromField(
-                  hinttext: 'Enter your Password',
-                  emailcontroller: emailController,
-                ),
+                CustomPasswordTextField(passwordcontroller: passController),
                 SizedBox(height: 24),
                 // Confirm Password
                 Text(
@@ -137,10 +138,7 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 6),
-                CustomTextfromField(
-                  hinttext: 'Confirm Password',
-                  emailcontroller: emailController,
-                ),
+                CustomPasswordTextField(passwordcontroller: passController),
                 SizedBox(height: 6),
 
                 Row(
@@ -201,7 +199,9 @@ class SignUpScreen extends StatelessWidget {
                     ),
 
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.back();
+                      },
                       child: Text(
                         StaticStrings.login,
                         style: TextStyle(
@@ -215,7 +215,12 @@ class SignUpScreen extends StatelessWidget {
                 SizedBox(height: 24),
 
                 // ===========custom Button==========
-                CustomButton(title: 'Continue', onTap: () {}),
+                CustomButton(
+                  title: 'Continue',
+                  onTap: () {
+                    Get.toNamed(AppRoutes.emailveriryscreen);
+                  },
+                ),
 
                 SizedBox(height: 60),
               ],
