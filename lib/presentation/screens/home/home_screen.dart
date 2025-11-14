@@ -42,21 +42,23 @@ class HomeScreen extends StatelessWidget {
 
             //================ list view builder =====================
             Expanded(
-              child: ListView.builder(
-                itemCount: homeController.taskDetails.length,
-                itemBuilder: (context, index) {
-                  //       //==========home card===============
-                  return HomeCard(
-                    onTap: () {
-                      Get.toNamed(
-                        AppRoutes.taskdetailsscreen,
-                        arguments: {'index': index},
-                      );
-                    },
-                    title: homeController.taskDetails[index]['title'],
-                    description: homeController.taskDetails[index]['des'],
-                  );
-                },
+              child: Obx(
+                () => ListView.builder(
+                  itemCount: homeController.taskDetails.length,
+                  itemBuilder: (context, index) {
+                    //       //==========home card===============
+                    return HomeCard(
+                      onTap: () {
+                        Get.toNamed(
+                          AppRoutes.taskdetailsscreen,
+                          arguments: {'index': index},
+                        );
+                      },
+                      title: homeController.taskDetails[index]['title'],
+                      description: homeController.taskDetails[index]['des'],
+                    );
+                  },
+                ),
               ),
             ),
           ],

@@ -8,6 +8,7 @@ class HomeCard extends StatelessWidget {
   final String title;
   final String description;
   final Function() onTap;
+
   const HomeCard({
     super.key,
     required this.title,

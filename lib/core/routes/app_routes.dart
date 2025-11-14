@@ -6,7 +6,7 @@ import 'package:task_manager/presentation/screens/auth/otp_verify/otp_verify_scr
 import 'package:task_manager/presentation/screens/auth/sign_up/sign_up.dart';
 import 'package:task_manager/presentation/screens/home/home_screen.dart';
 
-import 'package:task_manager/presentation/screens/home/inner_widget/task_section/task_details.dart';
+import 'package:task_manager/presentation/screens/home/inner_widget/task_section/task_details_screen.dart';
 
 import 'package:task_manager/presentation/screens/onboarding/onboarding.dart';
 import 'package:task_manager/presentation/screens/splash_screen/splash_screen.dart';

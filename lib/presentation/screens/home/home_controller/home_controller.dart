@@ -28,4 +28,19 @@ class HomeController extends GetxController {
           'Design a visual calendar interface to display upcoming tasks and deadlines with status indicators.',
     },
   ].obs;
+
+  // ============== remove task ===============
+  void removeTask(int index) {
+    if (index >= 0 && index < taskDetails.length) {
+      taskDetails.removeAt(index);
+    }
+  }
+
+  // ============ update task ================
+  void updateTask(int index, String newtitle, String newdescription) {
+    if (index >= 0 && index < taskDetails.length) {
+      taskDetails[index] = {'title': newtitle, 'des': newdescription};
+      taskDetails.refresh();
+    }
+  }
 }
