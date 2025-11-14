@@ -43,12 +43,11 @@ class StaticStrings {
       "Create a secure password to protect your account and get started seamlessly!";
   static const String newpassword = 'New Password';
   static const String newconfirmPassword = 'New Confirm password';
-  static RegExp emailRegexp = RegExp(
-    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
-  );
-  static RegExp passwordRegexp = RegExp(
-    r'^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$&*~]).{6,}$',
-  );
+  static const Pattern emailpattern =
+      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
+
+  static const Pattern passwordpattern =
+      r'^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$&*~]).{6,}$';
 
   static const String greetsmssage = "Hello";
   static const String welcometotask = "Welcome to Task Manager ";

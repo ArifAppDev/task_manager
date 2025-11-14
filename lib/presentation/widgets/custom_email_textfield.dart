@@ -18,7 +18,9 @@ class CustomEmailTextField extends StatelessWidget {
       validator: (value) {
         if (value == null || value.isEmpty) {
           return "Enter your email";
-        } else if (!StaticStrings.emailRegexp.hasMatch(value)) {
+        } else if (!RegExp(
+          StaticStrings.emailpattern.toString(),
+        ).hasMatch(value)) {
           return "Enter a valid email address";
         } else {
           return null;

@@ -5,8 +5,8 @@ import 'package:task_manager/presentation/screens/home/home_controller/home_cont
 import 'package:task_manager/presentation/screens/home/inner_widget/task_details_card/task_details_card.dart';
 import 'package:task_manager/presentation/widgets/custom_app_bar.dart';
 
-class TaskScreen extends StatelessWidget {
-  const TaskScreen({super.key});
+class TaskDetailsScreen extends StatelessWidget {
+  const TaskDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -20,13 +20,15 @@ class CustomPasswordTextField extends StatelessWidget {
       () => TextFormField(
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return "Enter your password";
-          } else if (!StaticStrings.passwordRegexp.hasMatch(value)) {
-            return "Password must have 6+ chars, 1 uppercase, 1 number & 1 symbol";
-          } else {
-            return null;
+            return "Enter your email";
+          } else if (!RegExp(
+            StaticStrings.passwordpattern.toString(),
+          ).hasMatch(value)) {
+            return "Enter a valid Password";
           }
+          return null;
         },
+
         autovalidateMode: AutovalidateMode.onUserInteraction,
 
         controller: passwordcontroller,

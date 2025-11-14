@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_manager/core/routes/app_routes.dart';
 import 'package:task_manager/presentation/screens/home/home_controller/home_controller.dart';
-import 'package:task_manager/presentation/screens/home/inner_widget/home_card/home_cart.dart';
+import 'package:task_manager/presentation/screens/home/inner_widget/home_card/home_card.dart';
 
 import 'package:task_manager/presentation/screens/home/inner_widget/profile_section/profile_section.dart';
 
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                   return HomeCard(
                     onTap: () {
                       Get.toNamed(
-                        AppRoutes.taskscreen,
+                        AppRoutes.taskdetailsscreen,
                         arguments: {'index': index},
                       );
                     },
